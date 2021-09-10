@@ -100,7 +100,7 @@ class GoogleDrive(plugin.Plugin):
                 return
 
             try:
-                self.configs = json.loads(configs)
+                self.configs = json.load(configs)
             except json.JSONDecodeError:
                 self.log.error("G_DRIVE_SECRET is not valid!")
                 self.bot.unload_plugin(self)
